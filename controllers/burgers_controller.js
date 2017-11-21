@@ -2,11 +2,8 @@ const express = require("express");
 
 const router = express.Router();
 
-// Import the model (cat.js) to use its database functions.
+// Import the model to use its database functions.
 const burger = require("../models/burger.js");
-
-// change values from cat to burger
-
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
@@ -17,6 +14,16 @@ router.get("/", function(req, res) {
     console.log(hbsObject);
     res.render("index", hbsObject);
   });
+});
+
+router.get("/api/burgers", function(req, res) {
+  burger.selectAll(function(data) {
+    var hbsObject = {
+      burgers: data
+    };
+    res.json(hbsObject)
+  });
+        // res.json(userArray);
 });
 
 //values of the colums name and sleepy, look at mvc 17 especially index and partials to see how to render on the page

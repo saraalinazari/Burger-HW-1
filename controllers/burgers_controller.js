@@ -1,5 +1,5 @@
 const express = require("express");
-
+const moment = require("moment");
 const router = express.Router();
 
 // Import the model to use its database functions.
@@ -23,18 +23,20 @@ router.get("/api/burgers", function(req, res) {
     };
     res.json(hbsObject)
   });
-        // res.json(userArray);
 });
 
 //values of the colums name and sleepy, look at mvc 17 especially index and partials to see how to render on the page
 
 router.post("/api/burgers", function(req, res) {
+
+  var mysqlTimestamp = moment(Date.now()).format('YYYY-MM-DD HH:mm:ss');
+
   burger.insertOne([
     "burger_name", "devoured", "date"
   ], [
-    req.body.burger_name, req.body.devoured, req.body.date
+    req.body.burger_name, req.body.devoured, mysqlTimestamp
   ], function(result) {
-    // Send back the ID of the new quote
+    // Send back the ID of the new burger
     res.json({ id: result.insertId });
   });
 });

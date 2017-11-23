@@ -1,6 +1,22 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded. 
 // Change the values from cat to burger and add the form
 $(function() {
+
+  $.backstretch([
+          "assets/img/mcdonaldsfirst.jpg",
+          "assets/img/bk.jpg",
+          "assets/img/BurChef006.jpg",
+          "assets/img/sonic.jpeg",
+          "assets/img/aw-drive-in-2.jpg",
+          "assets/img/OldMcD.jpg", 
+          "assets/img/gotts.0.0.jpg",
+          "assets/img/oldhamburger.jpg",
+          "assets/img/11.jpg"
+        ], {
+            duration: 12000,
+            fade: 900
+        });
+
   $(".eaten").on("click", function(event) {
     var id = $(this).data("id");
     var eaten = $(this).data("neweaten");

@@ -1,6 +1,6 @@
-<li>
-	{{burger_name}}
-	{{date}}
+<li class="list-group-item list-group-item-info p-2 my-1">
+	<h3><strong>{{burger_name}}</strong></h3>
+	<h6>{{date}}</h6>
 	<button class="eaten" data-id="{{id}}" data-neweaten="{{devoured}}">
 		{{#if devoured}}Eat Me!{{else}}Eaten!{{/if}}
 	</button>

@@ -1,3 +1,11 @@
-h2, .formTitle {
-	text-shadow: 2px 2px 3px #000;
+h2,
+.formTitle {
+    text-shadow: 2px 2px 3px #000;
+}
+
+.list-group-item {
+	display: grid;
+	background: rgba(242, 245, 222, 0.4);
+    color: #000;
+    text-shadow: 2px 2px 3px #C4CBCA;
 }

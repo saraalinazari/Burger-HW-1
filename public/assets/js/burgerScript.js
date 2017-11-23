@@ -18,6 +18,7 @@ $(function() {
         });
 
   $(".eaten").on("click", function(event) {
+  
     var id = $(this).data("id");
     var eaten = $(this).data("neweaten");
 
@@ -26,6 +27,9 @@ $(function() {
     var devouredOrNot = {
       devoured: eaten
     };
+
+    // $(event.target.eaten).remove();
+    // $(this).prop('disabled', true);
 
     // Send the PUT request.
     $.ajax("/api/burgers/" + id, {
@@ -38,6 +42,7 @@ $(function() {
         location.reload();
       }
     );
+
   });
 
   $(".makeTheBurger").on("submit", function(event) {

@@ -6,7 +6,7 @@ const router = express.Router();
 const burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
-router.all("/", function(req, res) {
+router.get("/", function(req, res) {
   burger.selectAll(function(data) {
     var hbsObject = {
       burgers: data
@@ -25,7 +25,6 @@ router.all("/api/burgers", function(req, res) {
   });
 });
 
-//values of the colums name and sleepy, look at mvc 17 especially index and partials to see how to render on the page
 
 router.post("/api/burgers", function(req, res) {
 

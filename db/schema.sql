@@ -1,8 +1,5 @@
 ### Schema
-DROP DATABASE IF EXISTS burgers_db;
-
-CREATE DATABASE burgers_db;
-USE burgers_db;
+USE heroku_30aa0966782038e;
 
 CREATE TABLE burgers
 (

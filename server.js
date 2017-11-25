@@ -1,9 +1,7 @@
 // Dependencies
 // ==============================================================================
 const express = require("express");
-const methodOverride = require('method-override')
 const bodyParser = require("body-parser");
-// const path = require("path"); don't need to require it?
 const app = express();
 
 var PORT = process.env.PORT || 3000;

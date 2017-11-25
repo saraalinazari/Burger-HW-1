@@ -92,6 +92,7 @@ module.exports = router;
 + [Body Parser NPM Package](https://www.npmjs.com/package/body-parser)
 + [Express Handlebars NPM Package](https://www.npmjs.com/package/express-handlebars)
 + [Moment.js](http://momentjs.com/)
++ [MySQL](https://www.npmjs.com/package/mysql)
 + [Bootstrap 4](https://getbootstrap.com/)
 + [Font Awesome](http://fontawesome.io/icons/)
 + [Backstretch.js](http://www.jquery-backstretch.com/)

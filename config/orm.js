@@ -110,8 +110,8 @@ var orm = {
 
       cb(result);
     });
-  }
-});
+  });
+}
 };
 
 // Export the orm object for the model (burgers.js).

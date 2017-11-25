@@ -1,3 +1,7 @@
+* {
+	font-family: 'Fontdiner Swanky', cursive;
+}
+
 h2,
 .formTitle {
     text-shadow: 2px 2px 3px #000;

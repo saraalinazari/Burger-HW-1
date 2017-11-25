@@ -1,5 +1,4 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded. 
-// Change the values from cat to burger and add the form
 $(function() {
 
   $.backstretch([
@@ -27,9 +26,6 @@ $(function() {
     var devouredOrNot = {
       devoured: eaten
     };
-
-    // $(event.target.eaten).remove();
-    // $(this).prop('disabled', true);
 
     // Send the PUT request.
     $.ajax("/api/burgers/" + id, {

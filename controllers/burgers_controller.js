@@ -6,7 +6,7 @@ const router = express.Router();
 const burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
-router.all("/", function(req, res) {
+router.get("/", function(req, res) {
   burger.selectAll(function(data) {
     var hbsObject = {
       burgers: data
@@ -16,7 +16,7 @@ router.all("/", function(req, res) {
   });
 });
 
-router.all("/api/burgers", function(req, res) {
+router.get("/api/burgers", function(req, res) {
   burger.selectAll(function(data) {
     var hbsObject = {
       burgers: data
@@ -30,6 +30,8 @@ router.post("/api/burgers", function(req, res) {
 
   var mysqlTimestamp = moment(Date.now()).format('YYYY-MM-DD HH:mm:ss');
 
+  console.log(req.body);
+  
   burger.insertOne([
     "burger_name", "devoured", "date"
   ], [

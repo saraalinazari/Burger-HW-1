@@ -1,6 +1,7 @@
 const mysql = require("mysql");
 
-const connection = mysql.createConnection({
+const pool = mysql.createPool({
+  connectionLimit: 10,
   host: "us-cdbr-iron-east-05.cleardb.net",
   user: "b4f2a1196d0130",
   password: '8fd9610d',
@@ -14,7 +15,7 @@ const connection = mysql.createConnection({
 //   database: "burgers_db"
 // });
 
-connection.connect(function(err) {
+pool.connect(function(err) {
   if (err) {
     console.error("error connecting: " + err.stack);
     return;
@@ -22,4 +23,4 @@ connection.connect(function(err) {
   console.log("connected as id " + connection.threadId);
 });
 
-module.exports = connection;
+module.exports = pool;

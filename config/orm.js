@@ -1,5 +1,5 @@
 // Import MySQL connection.
-const connection = require("../config/connection.js");
+const pool = require("../config/connection.js");
 
 // Helper function for SQL syntax.
 // Let's say we want to pass 3 values into the mySQL query.
@@ -43,12 +43,22 @@ function objToSql(ob) {
 var orm = {
   selectAll: function(tableInput, cb) {
     var queryString = "SELECT * FROM " + tableInput + ";";
+
+    pool.getConnection(function(err, connection) {
+
+
     connection.query(queryString, function(err, result) {
+
+    // And done with the connection.
+    connection.release();
+      // Handle error after the release.
       if (err) {
         throw err;
       }
       cb(result);
     });
+
+  });
   },
   insertOne: function(table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
@@ -62,13 +72,20 @@ var orm = {
 
     console.log(queryString);
 
+    pool.getConnection(function(err, connection) {
+
     connection.query(queryString, vals, function(err, result) {
+      // And done with the connection.
+      connection.release();
+      // Handle error after the release.
       if (err) {
         throw err;
       }
 
       cb(result);
     });
+
+  });
   },
   // An example of objColVals would be {name: panther, sleepy: true}
   updateOne: function(table, objColVals, condition, cb) {
@@ -80,7 +97,13 @@ var orm = {
     queryString += condition;
 
     console.log(queryString);
+
+    pool.getConnection(function(err, connection) {
+
     connection.query(queryString, function(err, result) {
+      // And done with the connection.
+      connection.release();
+      // Handle error after the release.
       if (err) {
         throw err;
       }
@@ -88,6 +111,7 @@ var orm = {
       cb(result);
     });
   }
+});
 };
 
 // Export the orm object for the model (burgers.js).

@@ -1,4 +1,4 @@
-# Burger-HW
+# Express.js ORM Burger Application
 Can you relate to Patrick or Homer?
 
 <img src="https://user-images.githubusercontent.com/29084524/33186776-285440de-d041-11e7-8450-2eda2b78aad7.gif" width="425"/> <img src="https://user-images.githubusercontent.com/29084524/33186775-28391f34-d041-11e7-948e-4b811daa2ec7.gif" width="425"/>
@@ -14,7 +14,7 @@ Once the burger is up, click on the eat me button to devour that son of a B.
 + Download [Chrome](https://www.google.com/chrome/browser/desktop/index.html) for your specific operating system.
 
 ## Requirements
-In this assignment, you'll create a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM (yum!). Be sure to follow the MVC design pattern; use Node and MySQL to query and route data in your app, and Handlebars to generate your HTML.
+In this homework assignment, you'll create a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM (yum!). Be sure to follow the MVC design pattern; use Node and MySQL to query and route data in your app, and Handlebars to generate your HTML.
 
 ## Code Higlights
 
